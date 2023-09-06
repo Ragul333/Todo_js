@@ -1,0 +1,41 @@
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent{
+    background-color: white;
+    padding: 2%;
+    border-radius: 1%;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo{
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.groupBtn {
+    display: flex;
+}
+
+.btn-warning {
+    margin-left: 10px;
+}
+
+body{
+    background-color: #f5d142;
+}
