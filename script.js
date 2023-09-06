@@ -1,15 +1,22 @@
 let input = document.getElementById("inputBox");
+let inputViaBtn = document.getElementById("button-addon");
 let itemsDiv = document.getElementById("items");
-let update  = false;
+let update = false;
 let updateId;
 let arr = [];
 
 input.addEventListener("keypress", (e) => {
   if (e.code === "Enter") {
-        arr.push(e.target.value);
+    arr.push(e.target.value);
     input.value = "";
     render();
   }
+});
+
+inputViaBtn.addEventListener("click", (e) => {
+  arr.push(input.value);
+  input.value = "";
+  render();
 });
 
 function render() {
@@ -19,19 +26,18 @@ function render() {
     li.innerText = item;
     li.setAttribute("id", index);
 
-    
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
-    deleteButton.className = 'btn btn-danger';
+    deleteButton.className = "btn btn-danger";
     deleteButton.addEventListener("click", () => deleteButtonFn(index));
-    
+
     let updateButton = document.createElement("button");
     updateButton.innerText = "Update";
-    updateButton.className = 'btn btn-warning';
+    updateButton.className = "btn btn-warning";
     updateButton.addEventListener("click", () => updateButtonFn(index));
-    
-    let span = document.createElement('span');
-    span.className = 'groupBtn';
+
+    let span = document.createElement("span");
+    span.className = "groupBtn";
 
     span.append(deleteButton);
     span.append(updateButton);
@@ -48,10 +54,10 @@ function deleteButtonFn(data) {
 }
 
 function updateButtonFn(data) {
-    let upDatePrompt = prompt('Enter Item : ', arr[data])
+  let upDatePrompt = prompt("Enter Item : ", arr[data]);
 
-    if(upDatePrompt){
-        arr[data] = upDatePrompt;
-        render()
-    }
+  if (upDatePrompt) {
+    arr[data] = upDatePrompt;
+    render();
+  }
 }

@@ -10,14 +10,32 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link href="style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="parent col-md-4 col-xs-10 mx-auto mt-5 shadow p-3 mb-5 bg-body rounded">
-        <div class="col-md-4 mx-auto d-flex align-items-center">
-            <span class="h3">Todo </span><img src="todologo.png" class="logo"/>
-        </div>
-          <input type="text" class="col-md-12 col-sm-12" id="inputBox" placeholder="Enter items . . ." />
+    <div
+      class="parent col-md-4 col-10 mx-auto mt-5 shadow p-3 mb-5 bg-body rounded"
+    >
+      <div class="col-4 mx-auto d-flex align-items-center">
+        <span class="h3">Todo </span><img src="todologo.png" class="logo" />
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="col-md-12 col-sm-12 form-control"
+          id="inputBox"
+          placeholder="Enter items . . ."
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-info"
+          type="button"
+          id="button-addon"
+        >
+          Add
+        </button>
+      </div>
       <div id="items"></div>
     </div>
     <script src="script.js"></script>
